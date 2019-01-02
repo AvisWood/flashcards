@@ -1,0 +1,43 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width,initial-scale=1')
+  title title
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+  link(rel='stylesheet' href='/styles.css' type='text/css')
+  body
+h1.title Flashcards
+.Container
+  .frontCard
+    .front
+      .jumbotron#questionImg
+      h3.question
+      br
+      #hintPopup.popup HINT!
+        span#myPopup.popuptext 
+      br
+      button.answerButton Answer
+  .backCard
+    .back
+      .jumbotron#answerImg
+      h3#answer
+      br
+      button.nextButton Next Question     
+
+h1.openForm Have questions to add???
+#myForm.form-popup
+  form(action='/addcard' method='POST')
+  input(type='text' placeholder='question' name='question')
+  br
+  input(type='text' placeholder='hint' name='hint')
+  br
+  input(type='text' placeholder='answer' name='answer')
+  br
+  button(type='submit') Submit 
+
+
+
+script(src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+script(src='flashcard.js' type='text/javascript')
